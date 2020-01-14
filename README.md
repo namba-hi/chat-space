@@ -6,10 +6,10 @@ usersテーブル
 |------|----|-------|
 |email||string|null: false|
 |password|string|null: false|
-|nickname|string|null: false|
+|nickname|string|null: false, index: true|
 
    Association
-  has_many :groups
+  has_many :groups_users
   has_many :comments
   has_many :groups, through: :groups_users
 
@@ -18,11 +18,10 @@ usersテーブル
 groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|comment_id|integer|null: false, foreign_key: true|
+|name|string|null: false|
 
    Assosiation
-  has_many :users
+  has_many :groups_users
   has_many :comments
   has_many :users, through: :groups_users
 
@@ -30,10 +29,10 @@ groupsテーブル
 textsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|text|text|null: false, foreign_key: true|
-|image|text|null: false, foreign_key: true|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|text|text|
+|image|text|
+|user|references|null: false, foreign_key: true|
+|group|references|null: false, foreign_key: true|
 
    Association
   belongs_to :user
@@ -42,8 +41,8 @@ textsテーブル
 groups_usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id||integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|user||references|null: false, foreign_key: true|
+|group|references|null: false, foreign_key: true|
 
    Association
 - belongs_to :group
