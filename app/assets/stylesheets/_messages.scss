@@ -3,13 +3,14 @@
 }
 
 .wrapper {
- display: flex;
+ 
  height: 100vh;
- width: 100%;
+ width: $width;
 
   .side-main {
    background-color: #253141;
    width: 300px;
+   float: left;
    &__header {
       background-color: #253141;
       height: 100px;
@@ -18,12 +19,12 @@
       padding: 0 20px;
       &__box {
         height: 20px;
-        width: 220px;
+        width: $width;
         display: flex;
         justify-content: space-between;
         &__username {
           line-height: 20px;
-          color: white;
+          color: $whitecolor;
           font-weight: bold;
         }
         &__icon {
@@ -32,7 +33,7 @@
           text-align: right;
           padding: 0 5px;
           &__btn {
-            color: white;
+            color: $whitecolor;
             text-decoration: none;
           }
         }
@@ -44,12 +45,12 @@
       &__group {
         padding: 20px 20px 40px 20px;
       &__name {
-        color: #ffffff;
+        color: $fcolor;
         font-size: 15px;
         padding-bottom: 5px;
         }
       &__message {
-        color: #ffffff;
+        color: $fcolor;
         font-size: 11px;
         }
       }
@@ -57,10 +58,11 @@
   }
 
   .chatmain {
-   background-color: #ffffff;
-   width: 100%;
+   background-color: $fcolor;
+   width: calc(100vw - 300px);
+   float: right;
    &__header {
-      background-color: #ffffff;
+      background-color: $fcolor;
       height: 100px;
       display: flex;
       justify-content: space-between;
@@ -77,9 +79,9 @@
       }
       &__edit {
         height: 40px;
-        color: #38aef0;
+        color: $bluecolor;
         padding: 0 20px;
-        border: solid 1px #38aef0;
+        border: solid 1px $bluecolor;
         margin-top: 30px;
         line-height: 40px;
         position: absolute;
@@ -112,7 +114,7 @@
       &__messages {
         font-size: 14px;
         margin-bottom: 46px;
-      }
+        }
       }
     }
    &__chat-bar {
@@ -123,7 +125,7 @@
       form {
         display: flex;
         .input-box {
-          width: 100%;
+          width: $width;
           display: flex;
           position: relative;
           &__input-text {
@@ -135,7 +137,7 @@
             border-style: none;
           }
           &__image {
-            cursor: pointer;
+            cursor: $cursor;
             font-size: 1.3rem;
             position: absolute;
             top: 10px;
@@ -150,9 +152,9 @@
             height: 50px;
             padding: 0 30px;
             margin-left: 15px;
-            background-color: #38aef0;
-            color: white;
-            cursor: pointer;
+            background-color: $bluecolor;
+            color: $whitecolor;
+            cursor: $cursor;
           }
       }
     }
