@@ -4,15 +4,16 @@
       .side-main__header__box__username
         = current_user.name
       .side-main__header__box__icon
-        = link_to "#", class: "side-main__header__box__icon__btn" do
+        = link_to new_group_path, class: "side-main__header__box__icon__btn" do
           = icon('fas', 'fas fa-edit', class: 'side-main__header__box__icon__btn')
         = link_to edit_user_path(current_user), class: "side-main__header__box__icon__btn" do
           = icon('fas', 'fas fa-cog', class: 'side-main__header__box__icon__btn')
   .side-main__groups
-    .side-main__groups__group
-      = link_to '#' do
-        .side-main__groups__group__name
-          techcamp
-      = link_to '#' do
-        .side-main__groups__group__message
-          まだメッセージがありません。
+    - current_user.groups.each do |group|
+      .side-main__groups__group
+        = link_to '#' do
+          .side-main__groups__group__name
+            = group.name
+        = link_to '#' do
+          .side-main__groups__group__message
+            まだメッセージがありません。
