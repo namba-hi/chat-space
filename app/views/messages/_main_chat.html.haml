@@ -1,0 +1,36 @@
+.chatmain
+  .chatmain__header
+    .chatmain__header__left
+      .chatmain__header__left__group
+        test
+      .chatmain__header__left__member
+        Member:masa
+    = link_to "#" do
+      .chatmain__header__edit
+        .chatmain__header__edit__bottan
+          Edit
+  .chatmain__message
+    .chatmain__message__block
+      .chatmain__message__block__upper
+        %p.chatmain__message__block__upper__username
+          masa
+        %p.chatmain__message__block__upper__info
+          2018/01/16(Thu) 18:52:12
+      .chatmain__message__block__messages
+        おはよう
+    .chatmain__message__block
+      .chatmain__message__block__upper
+        %p.chatmain__message__block__upper__username
+          masa
+        %p.chatmain__message__block__upper__info
+          2018/01/18(Thu) 18:52:12
+      .chatmain__message__block__messages
+        こんばんは
+  .chatmain__chat-bar
+    %form.new-message
+      .input-box
+        %input.input-box__input-text{:placeholder => "type a message", :type => "text"}/
+        %label{class: "input-box__image"}
+          = icon('fas', 'image')
+          %input{type: "file", class: "input-box__image__file"}
+      %input{type: "submit", class: "submit-btn"}
