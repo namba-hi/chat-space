@@ -47,11 +47,15 @@
       &__name {
         color: $fcolor;
         font-size: 15px;
-        padding-bottom: 5px;
+        text-decoration: none;
+        &__btn {
+          padding-bottom: 5px;
+          }
         }
       &__message {
         color: $fcolor;
         font-size: 11px;
+        text-decoration: none;
         }
       }
     }
