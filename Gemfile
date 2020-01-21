@@ -58,3 +58,11 @@ gem 'devise'
 gem 'pry-rails'
 gem 'carrierwave'
 gem 'mini_magick'
+
+
+group :test do
+  gem 'faker'
+  gem 'rspec-rails', '~> 3.5'
+  gem 'factory_bot_rails'
+  gem 'rails-controller-testing'
+end
