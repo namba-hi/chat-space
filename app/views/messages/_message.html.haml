@@ -4,7 +4,7 @@
       = message.user.name
     %p.chatmain__message__block__upper__info
       = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
-  .chatmain__message__block__messages
+  .chatmain__message__block__messages{data: {message: {id: message.id}}}
     - if message.content.present?
       %p.chatmain__message__block__messages__content
         = message.content
