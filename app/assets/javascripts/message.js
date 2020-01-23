@@ -17,12 +17,12 @@ $(function(){
         $('.chatmain__message').append(insertHTML)
         $('.chatmain__message').animate({ scrollTop: $('.chatmain__message')[0].scrollHeight});
         $('form')[0].reset();
+        $(".form__submit-btn").prop("disabled", false);
       }
     })
     .fail(function() {
-      console.log('error');
+      alert("error")
     });
-    return false
   };
   
   function buildHTML(message){
@@ -108,7 +108,7 @@ $(function(){
     .fail(function() {
       alert("メッセージ送信に失敗しました")
     });
-    return false;
+   return false
   })
   if (document.location.href.match(/\/groups\/\d+\/messages/)) {
     setInterval(reloadMessages, 7000);
